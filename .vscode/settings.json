@@ -1,0 +1,30 @@
+{
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "window.zoomLevel": 1,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontLigatures": true,
+      "editor.fontSize": 12,
+      "[javascript]": {
+          "editor.codeActionsOnSave": {
+              "source.fixAll.eslint": true,
+          }
+      },
+      "[javascriptreact]": {
+          "editor.codeActionsOnSave": {
+              "source.fixAll.eslint": true,
+          }
+      },
+      "[typescript]": {
+          "editor.codeActionsOnSave": {
+              "source.fixAll.eslint": true,
+          }
+      },
+      "[typescriptreact]": {
+          "editor.codeActionsOnSave": {
+              "source.fixAll.eslint": true,
+          }
+      },
+      "workbench.colorTheme": "Dracula",
+      "typescript.preferences.quoteStyle": "single",
+      "javascript.preferences.quoteStyle": "single",
+  }
