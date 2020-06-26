@@ -24,7 +24,7 @@
               "source.fixAll.eslint": true,
           }
       },
-      "workbench.colorTheme": "Dracula",
+      "workbench.colorTheme": "Omni",
       "typescript.preferences.quoteStyle": "single",
       "javascript.preferences.quoteStyle": "single",
   }
