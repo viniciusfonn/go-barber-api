@@ -1,7 +1,7 @@
 import { injectable, inject } from 'tsyringe';
 
 // import AppError from '@shared/errors/AppError';
-import IMailProvider from '@shared/container/helpers/MailHelper/models/IMailProvider';
+import IMailHelper from '@shared/container/helpers/MailHelper/models/IMailHelper';
 import AppError from '@shared/errors/AppError';
 import IUsersRepository from '../repositories/IUsersRepository';
 import IUserTokensRepository from '../repositories/IUserTokensRepository';
@@ -19,7 +19,7 @@ class SendForgotPasswordEmailService {
     private usersRepository: IUsersRepository,
 
     @inject('MailHelper')
-    private mailHelper: IMailProvider,
+    private mailHelper: IMailHelper,
 
     @inject('UserTokensRepository')
     private userTokensRepository: IUserTokensRepository,
@@ -32,9 +32,9 @@ class SendForgotPasswordEmailService {
       throw new AppError('user does not exists.');
     }
 
-    await this.userTokensRepository.generate(user.id);
+    const { token } = await this.userTokensRepository.generate(user.id);
 
-    this.mailHelper.sendMail(email, 'recuperação de senha');
+    await this.mailHelper.sendMail(email, `recuperação de senha: ${token}`);
   }
 }
 
