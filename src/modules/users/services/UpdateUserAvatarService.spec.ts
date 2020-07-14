@@ -34,14 +34,6 @@ describe('UpdateUserAvatar', () => {
   });
 
   it('should not be able to update avatar from non existing user', async () => {
-    const fakeUsersRepository = new FakeUsersRepository();
-    const fakeStorageHelper = new FakeStorageHelper();
-
-    const updateUserAvatar = new UpdateUserAvatarService(
-      fakeUsersRepository,
-      fakeStorageHelper,
-    );
-
     expect(
       updateUserAvatar.execute({
         user_id: 'fake-user',
